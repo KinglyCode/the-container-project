@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DATABASE_URL);
+console.log(process.env.DATABASE_URL)
+mongoose.connect(process.env.DATABASE_URL || "mongodb://localhost/the-container", {});
 
 const db = mongoose.connection;
 

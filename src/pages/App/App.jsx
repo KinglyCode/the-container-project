@@ -8,6 +8,7 @@ import LogInPage from '../LoginPage/LoginPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import HomePage from '../HomePage/HomePage';
 import ShoppingCartPage from '../ShoppingCartPage/ShoppingCartPage';
+import AllCategory from '../AllCategory/AllCategory';
 
 export default function App() {
   const [user, setUser] = useState(getUser())
@@ -21,6 +22,7 @@ export default function App() {
            <Routes>
             {/* <Route path="/home" element={<HomePage />} /> */}
             <Route path="/cart" element={<ShoppingCartPage />} />
+            <Route path="/categories" element={<AllCategory />} />
            </Routes> 
         </>
         :

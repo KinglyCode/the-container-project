@@ -1,4 +1,6 @@
-.img {
-    height: 10vw;
-    width: 10vw;
+#featured {
+    font-weight: bold;
+    background-color: bisque;
+    border-radius: 10px;
+    width: -50px;
 }

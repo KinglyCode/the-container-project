@@ -1,11 +1,14 @@
 import * as itemsAPI from '../../utilities/items-api'
+import * as ordersAPI from '../../utilities/orders-api'
 import { useEffect, useState } from 'react'
 import './HomePage.css'
-import ShoppingCartPage from '../ShoppingCartPage/ShoppingCartPage'
+import FeaturedItemList from '../../components/FeaturedItemsList/FeaturedItemList'
 
 
-export default function HomePage() {
+
+export default function HomePage({ handleAddToCart }) {
     const [items, setItems] = useState([])
+    const [cart, setCart] = useState(null)
 
     useEffect(function() {
         async function getItems() {
@@ -16,22 +19,21 @@ export default function HomePage() {
         getItems()
     }, [])
 
+    /*--- Event Handlers ---*/
+
+    async function handleAddToCart(itemId) {
+       const updateCart = await ordersAPI.addItemToCart(`${itemId}`)
+       setCart(updateCart)
+    }
+
     return(
         <>
-        <h1>Featured Items</h1>
-        {items.map(item => {
-            return(
-                <>
-                    <h3>Box Sets:</h3>
-                    <div className='name' key={item._id}>{item.name}</div>
-                    <img className='img' src={item.img}></img>
-                    <div className='price'>{item.price}</div>
-                    <button className="btn-sm" onClick={() => console.log('clicked')}>Add To Cart</button>
-                    
-                </>
-            )
-        })}
+            <header className="w3-container w3-xlarge">
+            <p className="w3-center" id='featured'>Featured Items</p>
+  </header>
+            <FeaturedItemList items={items} handleAddToCart={handleAddToCart} />
         </>
+        
     )
     
 }

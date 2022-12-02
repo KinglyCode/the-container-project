@@ -6,7 +6,7 @@ export default function LogInPage({ setUser }) {
     
     return(
         <main>
-            <h1 onClick={() => setLogin(login)}>Login</h1>
+            <h1 onClick={() => setLogin(login)}></h1>
             <LoginForm setUser={setUser} />
         </main>
     )

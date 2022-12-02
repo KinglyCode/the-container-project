@@ -33,9 +33,9 @@ export default function CartDetail({ order, handleChangeQty, handleRemoveItem })
                     {order.isPaid ?
                         <span>Total&nbsp;&nbsp;</span>
                         :
-                        <button onClick={() => alert('clicked')} disabled={!cartItems.length}>Pay Now</button>
+                        <button className="pay-button" onClick={() => alert('You have made a purchase! Thank you!')} disabled={!cartItems.length}>Pay Now</button>
                     }
-                    <span>{order.totalQty}</span>
+                    <span className="order-qty">{order.totalQty}</span>
                     <span>${order.orderTotal.toFixed(2)}</span>
                 </section>
             </>

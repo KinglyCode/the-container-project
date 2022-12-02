@@ -1,6 +1,7 @@
 // Rewrite the SignUpForm as a function component
 import { useState } from 'react'
 import { signUp } from '../../utilities/users-service'
+import "./SignUpForm.css"
 
 export default function SignUpForm({ setUser }) {
     const [formData, setFormData] = useState({
@@ -39,20 +40,33 @@ export default function SignUpForm({ setUser }) {
 
     return(
         <div>
-            <div className="form-container">
-              <form autoComplete="off" onSubmit={handleSubmit}>
-                <label>Name</label>
-                <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-                <label>Email</label>
-                <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-                <label>Password</label>
-                <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-                <label>Confirm</label>
-                <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
-                <button type="submit" disabled={disable}>SIGN UP</button>
-              </form>
-            </div>
-            <p className="error-message">&nbsp;{formData.error}</p>
-          </div>
-    )
+            <div className="container-1">
+                <div className='sign-up'>Sign Up</div>
+                    <form autoComplete="off" onSubmit={handleSubmit}>
+                        <div className='box'>
+                            <label for="firstName" className='fl fontLabel'>Name: </label>
+                                <div className='fl iconBox'><i className='fa fa-user' aria-hidden="true"></i></div>
+                                    <input type="text" name="name" className='textBox' placeholder='Enter Name' value={formData.name} onChange={handleChange} required />
+                                </div>
+                            <div className='box'>
+                                <label for="email" className='fl fontLabel'>Email: </label>
+                                    <div className='fl iconBox'><i className='fa fa-envelope' aria-hidden="true"></i></div> 
+                                    <input type="email-1" name="email" placeholder='Enter Email' className='textBox' value={formData.email} onChange={handleChange} required />
+                                </div>  
+                            <div className="box">
+                                <label for="password" className='fl fontLabel'>Password: </label>
+                                    <div className='fl iconBox'><i className='fa fa-key' aria-hidden="true"></i></div>
+                                        <input type="password-1" name="password" placeholder="Enter Password" className='textBox' value={formData.password} onChange={handleChange} required />   
+                                    </div>
+                            <div className="box">
+                                <label for="password" className='fl fontLabel'>Confirm: </label>
+                                    <div className='fl iconBox'><i className='fa fa-key' aria-hidden="true"></i></div>    
+                                        <input type="password-2" name="confirm" placeholder="Confirm Password" className='textBox' value={formData.confirm} onChange={handleChange} required />
+                                    </div>
+                                <button type="submit"  className="sign-up-button-1" id="submit" disabled={disable}>SIGN UP</button>
+                            </form>
+                        </div>
+                        <p className="error-message">&nbsp;{formData.error}</p>
+                    </div>
+        )
 }

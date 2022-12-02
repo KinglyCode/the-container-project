@@ -1,6 +1,6 @@
 #featured {
     font-weight: bold;
-    background-color: bisque;
     border-radius: 10px;
-    width: -50px;
+    width: -100px;
+    margin-left: 200px;
 }

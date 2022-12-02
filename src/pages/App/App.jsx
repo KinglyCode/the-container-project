@@ -18,17 +18,18 @@ export default function App() {
       { user ? 
         <>
           <NavBar user={user} setUser={setUser} />
-          <HomePage />
            <Routes>
             {/* <Route path="/home" element={<HomePage />} /> */}
             <Route path="/cart" element={<ShoppingCartPage />} />
             <Route path="/categories" element={<AllCategory />} />
+            <Route path="/home" element={<HomePage />} />
            </Routes> 
         </>
         :
         <>
-          <IndexPage />
+          
           <Routes>
+            <Route path="/index" element={<IndexPage />} />
             <Route path="/login-form" element={<LogInPage setUser={setUser} /> } />
             <Route path="/signup-form" element={<SignUpPage setUser={setUser} /> } />
           </Routes>

@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser}) {
 
     return (
         <>
-            <h3>Welcome, {user.name}</h3>
+            <h3 className='user-name'>Welcome, {user.name}</h3>
                 <nav className="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" id="mySidebar">
                 <div className="w3-container w3-display-container w3-padding-16">
                 <i onClick="w3_close()" className="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>

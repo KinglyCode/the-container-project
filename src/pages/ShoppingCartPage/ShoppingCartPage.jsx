@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import * as ordersAPI from "../../utilities/orders-api"
 import CartDetail from "../../components/CartDetail/CartDetail"
+import "./ShoppingCartPage.css"
 
 export default function ShoppingCartPage() {
     const [cart, setCart] = useState(null)
@@ -29,8 +30,10 @@ export default function ShoppingCartPage() {
 
     return (
         <>
+        <div className="cart">
         <h1>Your Cart</h1>
         <CartDetail order={cart} handleChangeQty={handleChangeQty} handleRemoveItem={handleRemoveItem}/>
+        </div>
         </>
     )
 }

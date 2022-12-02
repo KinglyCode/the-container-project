@@ -5,21 +5,21 @@ export default function CartItem({ cartItem, isPaid, handleChangeQty, handleRemo
         <>
         <div>
             <img className="cart-img"src={cartItem.item.img} />
-            <span>{cartItem.item.name}</span>
-            <div>${cartItem.extPrice.toFixed(2)}</div>
+            <span className="cart-name">{cartItem.item.name}</span>
+            <div className="cart-price">${cartItem.extPrice.toFixed(2)}</div>
             {/* <span>{cartItem.item.price.toFixed(2)}</span> */}
               
             
         </div>
         <div style={{ justifyContent: isPaid && 'center'}}>
             {!isPaid && 
-                <button onClick={() => handleChangeQty(cartItem._id, cartItem.qty - 1)}>-</button>
+                <button className="button-60"onClick={() => handleChangeQty(cartItem._id, cartItem.qty - 1)}>-</button>
             }
             <span>{cartItem.qty}</span>
             {!isPaid &&
-                <button onClick={() => handleChangeQty(cartItem._id, cartItem.qty + 1)}>+</button>
+                <button className="button-60" onClick={() => handleChangeQty(cartItem._id, cartItem.qty + 1)}>+</button>
             }
-            <button className="delete" onClick={() => handleRemoveItem(cartItem._id)}>Remove From Cart</button>
+            <button className="button-9" onClick={() => handleRemoveItem(cartItem._id)}>Remove From Cart</button>
         </div>
         
         </>

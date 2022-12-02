@@ -151,3 +151,12 @@ button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 } */ 
+/* body {
+  display: flex;
+  flex-direction: row;
+  max-width: fit-content;
+} */
+
+.main-header {
+  background-color: blanchedalmond;
+}

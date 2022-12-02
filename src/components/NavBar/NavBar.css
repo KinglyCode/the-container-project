@@ -6,3 +6,10 @@
 #myFont {
     font-weight: bold;
 }
+
+.user-name {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: right;
+    margin-left: 900px;
+}

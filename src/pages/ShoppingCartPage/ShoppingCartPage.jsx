@@ -16,16 +16,21 @@ export default function ShoppingCartPage() {
 
     //  /*--- Event Handlers ---*/
 
-    //  async function handleAddToCart(itemId) {
-    //     const updateCart = await ordersAPI.addItemToCart(`${itemId}`)
-    //     setCart(updateCart)
-    //  }
+    async function handleChangeQty(itemId, newQty) {
+        const updateCart = await ordersAPI.setItemQty(itemId, newQty)
+        setCart(updateCart)
+    }
+
+    async function handleRemoveItem(itemId) {
+        const updateCart = await ordersAPI.setRemoveItem(itemId)
+        setCart(updateCart)
+    }
 
 
     return (
         <>
         <h1>Your Cart</h1>
-        <CartDetail order={cart} />
+        <CartDetail order={cart} handleChangeQty={handleChangeQty} handleRemoveItem={handleRemoveItem}/>
         </>
     )
 }

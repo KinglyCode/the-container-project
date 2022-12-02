@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const shopCategory = new Schema({
     name: { type: String, required: true },
+    //name1: { type: String, required: true},
     sortOrder: Number
 }, {
     timestamps: true

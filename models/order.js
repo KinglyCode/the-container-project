@@ -46,24 +46,34 @@ orderSchema.statics.getCart = function(userId) {
 }
 
 orderSchema.methods.addItemToCart = async function (itemId) {
-    console.log(itemId)
     const cart = this
-    const cartItem = cart.cartItems.find(cartItem => {
-        console.log(cartItem)
-        cartItem._id.equals(itemId)
-    })
-    console.log(cartItem)
+    const cartItem = cart.cartItems.find(cartItem => { cartItem._id.equals(itemId) })
     if (cartItem) {
-        console.log('true')
         cartItem.qty += 1
     } else {
-        console.log('false')
         const item = await mongoose.model('Item').findById(itemId)
-        console.log('false', item, cart)
         cart.cartItems.push({ item })
-        console.log(cart)
     }
     return cart.save()
+}
+
+orderSchema.methods.setItemQty = function(itemId, newQty) {
+    const cart = this
+
+    const cartItem = cart.cartItems.find(cartItem => cartItem._id.equals(itemId))
+    if(cartItem && newQty <= 0) {
+        cartItem.remove()
+    } else if (cartItem) {
+        cartItem.qty = newQty
+    }
+    return cart.save()
+}
+
+orderSchema.methods.setRemoveItem = function(itemId) {
+    const cart = this
+    const cartItem = cart.cartItems.find(cartItem => cartItem._id.equals(itemId))
+    
+    return cartItem.remove()
 }
 
 module.exports = mongoose.model('Order', orderSchema)

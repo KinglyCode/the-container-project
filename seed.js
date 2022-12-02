@@ -9,14 +9,14 @@ const seedData = async function() {
     await Shop.deleteMany({});
     const categories = await Shop.create([
         {name: 'Yu-Gi-Oh Card Packs', sortOrder: 10},
-        //{name: 'Funko Pops', sortOrder: 20}
+        {name: 'Funko Pops', sortOrder: 20}
     ])
 
     await Item.deleteMany({})
     const items = await Item.create([
         {name: '2022 YuGiOh Battle of Chaos Booster Box', img: "https://i.imgur.com/KrdMEYf.jpg", category: categories[0], packAmount: 24, price: 74.99, feature: true},
         // {name: 'YuGiOh Legendary Synchro Booster Box', category: categories[0], packAmount: 36, feature: true},
-        // {name: 'Funko Pop1', category: categories[1], feature: false},
+        {name: 'Funko Pop1', category: categories[1], feature: false},
         // {name: 'YuGiOh Pack3', category: categories[0], feature: false}
 
         

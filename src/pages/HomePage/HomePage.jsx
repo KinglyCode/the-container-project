@@ -30,7 +30,7 @@ export default function HomePage({ handleAddToCart }) {
         <>
             <header className="w3-container w3-xlarge">
             <p className="w3-center" id='featured'>Featured Items</p>
-  </header>
+            </header>
             <FeaturedItemList items={items} handleAddToCart={handleAddToCart} />
         </>
         

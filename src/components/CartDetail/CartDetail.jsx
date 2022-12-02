@@ -1,7 +1,7 @@
 import CartItem from "../CartItem/CartItem";
 import "./CartDetail.css"
 
-export default function CartDetail({ order }) {
+export default function CartDetail({ order, handleChangeQty, handleRemoveItem }) {
     if (!order) return null
 
     const cartItems = order.cartItems.map(item => 
@@ -9,6 +9,8 @@ export default function CartDetail({ order }) {
             cartItem={item}
             isPaid={order.isPaid}
             key={item._id}
+            handleChangeQty={handleChangeQty}
+            handleRemoveItem={handleRemoveItem}
         />
     )
     console.log("Order", order)

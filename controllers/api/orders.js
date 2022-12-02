@@ -25,8 +25,6 @@ async function setItemQty(req, res) {
 }
 
 async function setRemoveItem(req, res) {
-    console.log("HERE for req.body", req.body)
-    console.log("HERE for req.params", req.params.id)
     const cart = await Order.getCart(req.user._id)
     await cart.setRemoveItem(req.params.id)
     res.json(cart)

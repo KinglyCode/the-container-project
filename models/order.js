@@ -72,7 +72,7 @@ orderSchema.methods.setItemQty = function(itemId, newQty) {
 orderSchema.methods.setRemoveItem = function(itemId) {
     const cart = this
     const cartItem = cart.cartItems.find(cartItem => cartItem._id.equals(itemId))
-    
+
     return cartItem.remove()
 }
 

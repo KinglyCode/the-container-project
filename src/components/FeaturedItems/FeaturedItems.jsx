@@ -9,7 +9,7 @@ export default function FeaturedItems({ item, handleAddToCart }) {
                         <img  className="img" src={item.img} />
                     </div>
                         <span>${item.price.toFixed(2)}</span>
-                    <button className="btn-sm" onClick={() => handleAddToCart(item._id)}>Add To Cart</button>
+                    <button className="add-to-cart" onClick={() => handleAddToCart(item._id)}>Add To Cart</button>
               </div>
         </div>
         

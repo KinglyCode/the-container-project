@@ -4,8 +4,6 @@ import { useEffect, useState } from 'react'
 import './HomePage.css'
 import FeaturedItemList from '../../components/FeaturedItemsList/FeaturedItemList'
 
-
-
 export default function HomePage({ handleAddToCart }) {
     const [items, setItems] = useState([])
     const [cart, setCart] = useState(null)
@@ -29,7 +27,7 @@ export default function HomePage({ handleAddToCart }) {
     return(
         <>
             <header className="w3-container w3-xlarge">
-            <p className="w3-center" id='featured'>Featured Items</p>
+                <p className="w3-center" id='featured'>Featured Items</p>
             </header>
             <FeaturedItemList items={items} handleAddToCart={handleAddToCart} />
         </>

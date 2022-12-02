@@ -27,7 +27,6 @@ export default function App() {
         </>
         :
         <>
-          
           <Routes>
             <Route path="/index" element={<IndexPage />} />
             <Route path="/login-form" element={<LogInPage setUser={setUser} /> } />

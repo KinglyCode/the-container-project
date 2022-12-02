@@ -18,10 +18,10 @@ export default function NavBar({ user, setUser}) {
                 </div>
                 <div className="w3-padding-64 w3-large w3-text-grey" id="myFont">
                     <h3 className="w3-wide"><b>The Container Shop Logo</b></h3>
-                        <Link to="/home"><a href="#" className="w3-bar-item w3-button">Home</a></Link>
-                        <Link to="/categories"><a href="#" className="w3-bar-item w3-button">All Categories</a></Link>
-                        <Link to="/cart"><a href="#" className="w3-bar-item w3-button">My Cart</a></Link>
-                        <Link to="" onClick={handleLogOut}><a href="#" className="w3-bar-item w3-button">Log Out</a></Link>
+                        <Link to="/home" className="link-menu-section" ><a href="#" className="w3-bar-item w3-button">Home</a></Link>
+                        <Link to="/categories" className="link-menu-section"><a href="#" className="w3-bar-item w3-button">All Categories</a></Link>
+                        <Link to="/cart" className="link-menu-section"><a href="#" className="w3-bar-item w3-button">My Cart</a></Link>
+                        <Link to="" className="link-menu-section" onClick={handleLogOut}><a href="#" className="w3-bar-item w3-button">Log Out</a></Link>
                     </div>
                 </nav>
         </>

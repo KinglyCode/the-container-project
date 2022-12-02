@@ -27,12 +27,11 @@ export default function ShoppingCartPage() {
         setCart(updateCart)
     }
 
-
     return (
         <>
         <div className="cart">
-        <h1>Your Cart</h1>
-        <CartDetail order={cart} handleChangeQty={handleChangeQty} handleRemoveItem={handleRemoveItem}/>
+            <h1>Your Cart</h1>
+            <CartDetail order={cart} handleChangeQty={handleChangeQty} handleRemoveItem={handleRemoveItem}/>
         </div>
         </>
     )

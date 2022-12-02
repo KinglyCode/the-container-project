@@ -7,11 +7,50 @@
 .order-qty{
     padding: 20px;
     padding-top: 10px;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.order-price {
+    font-size: 20px;
 }
 
 .pay-button {
-    border-radius: 15px;
-    margin-top: 15px;
-    margin-bottom: 30px;
-    background-color: beige;
-}
+    background-color: #fff;
+    border: 0 solid #e2e8f0;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 10px;
+    margin: 20px;
+  }
+  
+  .pay-button:hover {
+    background-color: #1e293b;
+    color: #fff;
+  }
+  
+  @media (min-width: 768px) {
+    .pay-button
+   {
+      font-size: 1.125rem;
+      padding: 1rem 2rem;
+    }
+  }
+  

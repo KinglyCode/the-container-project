@@ -83,3 +83,12 @@
 .button-60:focus:not(:active) {
   box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
 }
+
+.cart-container-1 {
+  color: black;
+}
+
+.cart-qty {
+  font-size: 15px;
+  margin: 0 auto;
+}

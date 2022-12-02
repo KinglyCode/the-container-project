@@ -36,7 +36,7 @@ export default function CartDetail({ order, handleChangeQty, handleRemoveItem })
                         <button className="pay-button" onClick={() => alert('You have made a purchase! Thank you!')} disabled={!cartItems.length}>Pay Now</button>
                     }
                     <span className="order-qty">{order.totalQty}</span>
-                    <span>${order.orderTotal.toFixed(2)}</span>
+                    <span className="order-price">${order.orderTotal.toFixed(2)}</span>
                 </section>
             </>
             :
